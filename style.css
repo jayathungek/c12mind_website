@@ -1,0 +1,53 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grid Layout Wrapper */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navigation Bar */
+#navbar {
+  background-color: #111;
+  color: white;
+  padding: 1rem;
+}
+
+#navbar ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Main Page Content */
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Footer */
+#footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+}
