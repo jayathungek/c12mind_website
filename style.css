@@ -15,32 +15,37 @@ body {
 }
 
 #navbar {
+  display: flex;
+  flex-direction: row;          /* force side-by-side layout */
+  justify-content: space-between;
+  align-items: center;
+
   background-color: #111;
   color: white;
   padding: 1rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
+/* Logo sizing */
 #logo img {
   height: 50px;
+  display: block;
 }
 
-#navbar ul {
+/* Nav list */
+#navbar nav ul {
   display: flex;
-  list-style: none;
   gap: 2rem;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-#navbar a {
+#navbar nav a {
   color: white;
   text-decoration: none;
 }
 
-#navbar a:hover {
+#navbar nav a:hover {
   text-decoration: underline;
 }
 
@@ -57,4 +62,20 @@ main {
   color: #ccc;
   text-align: center;
   padding: 1rem;
+}
+
+
+/* ----- Responsive breakpoint for small screens ----- */
+@media (max-width: 600px) {
+  #navbar {
+    flex-direction: column;       /* stack logo and nav vertically */
+    align-items: center;          /* center them */
+    text-align: center;
+  }
+
+  #navbar nav ul {
+    flex-direction: row;       /* stack nav links vertically */
+    gap: 1rem;
+    text-align: left;
+  }
 }

@@ -3,6 +3,7 @@ function loadFragment(containerId, url) {
   xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById(containerId).innerHTML = this.responseText;
+      void(container.offsetHeight);
     }
   };
   xhr.open("GET", url, true);
