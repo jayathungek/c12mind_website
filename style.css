@@ -11,8 +11,19 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+  color: white;
+  background-color: #ffffff;
 }
+
+body a {
+  color: white;
+  text-decoration: none;
+}
+
+body a:hover {
+  text-decoration: underline;
+}
+
 
 #navbar {
   display: flex;
@@ -51,9 +62,45 @@ body {
 
 /* Main Page Content */
 main {
-  padding: 2rem;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
   margin: 0 auto;
+  max-width: inherit;
+  color: rgb(207, 207, 207);
+  background-color: black;
+  background-image: url('img/buckyball.png');
+  background-repeat: no-repeat;   /* prevents tiling */
+  background-position: right center; /* center it (can also use top/left/bottom) */
+  background-size: auto;          /* keeps original image size */
+  position: relative;       
+  display: flex;            
+}
+
+main #main-content {
+  max-width: 800px;
+  margin: 0 auto;          /* centers the content horizontally */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; 
+  box-sizing: border-box;
+  justify-content: center; /* centers children vertically in the parent */
+}
+
+main #main-content > * {
+  max-width: 100%;         /* children never exceed parent width */
+  margin-bottom: 2rem;     /* space between sections */
+  background: rgba(0, 0, 0, 0.651);
+}
+
+main #content-container {
+  gap: 2em;
+  display: flex;
+  flex-direction: column; 
+}
+
+main .spacer {
+  flex: 0 0 33%; /* takes up the first third */
 }
 
 /* Footer */
@@ -65,8 +112,69 @@ main {
 }
 
 
+#contact-form {
+  display: flex;               /* Makes it a flex container */
+  flex-direction: column;      /* Stack fields vertically */
+  gap: 1rem;                   /* Space between fields */
+  width: 100%;                 /* Full width of parent */
+  margin: 0 auto;              /* Center if it's narrower */
+  box-sizing: border-box;
+}
+
+#contact-form #form-upper{
+  display: flex;               /* Makes it a flex container */
+  flex-direction: row;      /* Stack fields vertically */
+  gap: 1rem;                   /* Space between fields */
+  width: 100%;                /* Full width of parent */
+  margin: 0 auto;              /* Center if it's narrower */
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+#contact-form #form-upper > *{
+  flex: 1;
+  min-width: 0;
+}
+
+
+form input, form textarea, form select {
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  flex: 1;  /* Grow to fill space if needed */
+}
+
+/* Style submit button */
+form button {
+  display: inline-block;
+  margin: 0 auto;   /* center horizontally */
+  padding: 0.5em 1em;
+  background: #2a7a3b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #1d5a2b;
+}
+
+
+
 /* ----- Responsive breakpoint for small screens ----- */
 @media (max-width: 600px) {
+  #contact-form #form-upper{
+    display: flex;               /* Makes it a flex container */
+    flex-direction: column;      /* Stack fields vertically */
+    gap: 1rem;                   /* Space between fields */
+    width: 100%;                 /* Full width of parent */
+    margin: 0 auto;              /* Center if it's narrower */
+    box-sizing: border-box;
+  }
+
   #navbar {
     flex-direction: column;       /* stack logo and nav vertically */
     align-items: center;          /* center them */
@@ -78,4 +186,30 @@ main {
     gap: 1rem;
     text-align: left;
   }
+
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+  }
+
+  body a {
+    color: white;
+    text-decoration: none;
+  }
+
+  body a:hover {
+    text-decoration: underline;
+  }
+
+  /* main #main-content {
+    background: rgba(0, 0, 0, 0.651);
+  } */
+  main .spacer {
+    flex: 0 0 0; /* takes up the first third */
+  }
+
+
 }
