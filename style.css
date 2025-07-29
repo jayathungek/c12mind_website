@@ -10,7 +10,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   background-color: #ffffff;
 }
@@ -177,6 +177,7 @@ form button:hover {
 
   #navbar {
     flex-direction: column;       /* stack logo and nav vertically */
+    gap: 1rem;
     align-items: center;          /* center them */
     text-align: center;
   }
@@ -191,7 +192,7 @@ form button:hover {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #ffffff;
   }
 
