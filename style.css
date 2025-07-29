@@ -69,7 +69,7 @@ main {
   max-width: inherit;
   color: rgb(207, 207, 207);
   background-color: black;
-  background-image: url('img/buckyball.png');
+  background-image: url('img/buckyball_web.png');
   background-repeat: no-repeat;   /* prevents tiling */
   background-position: right center; /* center it (can also use top/left/bottom) */
   background-size: auto;          /* keeps original image size */
